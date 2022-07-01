@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Form</title>
+</head>
+<body>
+    
+
+    <div class="formContainer">
+         <fieldset>
+            <legend><strong><h1>Enter your details</h1></strong></legend>
+
+
+       <form action="submitform.html">
+           <div class="row">
+               <div>Name:</div>
+                <input type="text" id="name" name="name" onsubmit="showTypedValue()">
+                <h1 id="textInput"></h1>
+           </div>
+           <div class="row">
+            <div>Father Name:</div>
+             <input type="text" name="fname" onchange="showTypedValue2('')">
+            </div>
+        <div class="row">
+            <div>Gender:</div>
+            <input type="radio" name="Gender">Male
+            <input type="radio" name="Gender">Female
+             
+        </div>
+        <div class="row">
+            <div>Contact No#:</div>
+             <input type="text" name="cno" value="">
+        </div>
+        <div class="row">
+            <div>institute:</div>
+             <input type="text" name="institute" value="">
+        </div>
+        <div class="row">
+            <div>Class:</div>
+             <input type="text" name="class" value="">
+        </div>
+        <div class="row">
+            <div>Semester:</div>
+             <input type="text" name="Semester" value="">
+        </div>
+         <div class="row">
+             <div>Choose the No of subjects:</div>
+		 <select id="subjects" name="subjects">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="7">8</option>
+            </select>
+        </div>
+        <div class="row">
+                         <input type="submit">
+             <input type="reset">
+        </div>
+      
+
+
+       </form>
+
+    </fieldset>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

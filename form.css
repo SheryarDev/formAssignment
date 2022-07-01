@@ -1,0 +1,42 @@
+/* body{
+    background: yellow;
+} */
+
+.formContainer{
+   /* width: 400px; */
+   height: 100vh;
+   /* border: 2px solid red;
+    display: grid;
+    place-items: center; */
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.row{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 25px;
+   
+}
+.row input,span{
+    margin-left: 10px;
+    padding: 10px 20px;
+}
+
+input[type="radio"]{
+   margin-top: 10px;
+}
+#subjects{
+    margin-left: 10px;
+    padding: 10px;
+}
+
+table ,tr,td ,th{
+    border: 2px solid black;
+    padding: 5px;
+   text-align: center;
+}

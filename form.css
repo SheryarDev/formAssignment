@@ -18,15 +18,22 @@
 .row{
     display: flex;
     align-items: center;
-    padding: 10px;
+    /* padding: 10px; */
     font-size: 25px;
-   
+  
 }
-.row input,span{
+.record .row{
+    line-height: 0.1;
+}
+.row input{
     margin-left: 10px;
     padding: 10px 20px;
 }
 
+.row span{
+    margin-left: 10px;
+    padding: 5px
+}
 input[type="radio"]{
    margin-top: 10px;
 }

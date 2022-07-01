@@ -18,12 +18,12 @@
        <form action="submitform.html">
            <div class="row">
                <div>Name:</div>
-                <input type="text" id="name" name="name" onsubmit="showTypedValue()">
+                <input type="text" id="name" name="name" onblur="getid(id)">
                 <h1 id="textInput"></h1>
            </div>
            <div class="row">
             <div>Father Name:</div>
-             <input type="text" name="fname" onchange="showTypedValue2('')">
+             <input type="text" id="fname"   onblur="getid('fname')">
             </div>
         <div class="row">
             <div>Gender:</div>
@@ -33,19 +33,19 @@
         </div>
         <div class="row">
             <div>Contact No#:</div>
-             <input type="text" name="cno" value="">
+             <input type="text" id="cno" onblur="getid('cno')">
         </div>
         <div class="row">
             <div>institute:</div>
-             <input type="text" name="institute" value="">
+             <input type="text" id="institute" value="" onblur="getid('institute')">
         </div>
         <div class="row">
             <div>Class:</div>
-             <input type="text" name="class" value="">
+             <input type="text" id="class" onblur="getid('class')">
         </div>
         <div class="row">
             <div>Semester:</div>
-             <input type="text" name="Semester" value="">
+             <input type="text" id="Semester"  onblur="getid('Semester')">
         </div>
          <div class="row">
              <div>Choose the No of subjects:</div>

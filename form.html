@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="form.css">
     <title>Form</title>
 </head>
-<body>
+<body onload="clearlocalStorage()">
     
 
     <div class="formContainer">
          <fieldset>
             <legend><strong><h1>Enter your details</h1></strong></legend>
 
-
-       <form action="submitform.html">
+           
+       <form action="submitform.html" onsubmit="return validateForm()">
            <div class="row">
                <div>Name:</div>
                 <input type="text" id="name" name="name" onblur="getid('name')" >
@@ -27,8 +27,8 @@
             </div>
         <div class="row">
             <div>Gender:</div>
-            <input type="radio" name="Gender">Male
-            <input type="radio" name="Gender">Female
+            <input type="radio" id="Male"  onblur="getid('Male')" name="Gender" value="Male">Male
+            <input type="radio" id="female"  onblur="getid('female')" name="Gender" value="female">Female
              
         </div>
         <div class="row">
@@ -75,15 +75,58 @@
     </fieldset>
     </div>
     <script>
-        function getid(id){
 
+
+function validateForm(){
+var name,fname,Gender1,Gender2cno,institute,classs,Semester;
+
+name=document.getElementById("name").value;
+fname=document.getElementById("fname").value;
+cno=document.getElementById("cno").value;
+institute=document.getElementById("institute").value;
+classs=document.getElementById("class").value;
+Semester=document.getElementById("Semester").value;
+Gender1=document.getElementById("Male").checked;
+Gender2=document.getElementById("female").checked;
+
+console.log("form" + Gender1)
+console.log("form2" + Gender2)
+if(name == "" || fname== "" ||  cno =="" || institute=="" || classs=="" || Semester=="")
+{
+    alert("Requried fields mustbe filled")
+    return false;
+}
+else {
+    if(Gender1==true || Gender2==true)
+    {
+      
+        return true;
+    }
+    else
+    {
+        alert("you must select gender");
+        return false;
+    }
+}
+
+}
+
+function getid(id){
 let element =document.getElementById(id);
 element=element.id;
-console.log(element);
+// console.log(element);
 var text = document.getElementById(element).value;
 localStorage.setItem(id,text)
 }
 
+function getSubId(id){
+let element =document.getElementById(id);
+element=element.id;
+// console.log(element);
+var Stext=document.getElementById(element).value;
+localStorage.setItem(id,Stext)
+// console.log(Stext);
+}
 
 
 let Sval=document.getElementById("subjects");
@@ -91,7 +134,7 @@ Sval.addEventListener('change',sub)
 Sval.addEventListener('change',addSub)
 //  Sval.addEventListener('',empty)
 function sub(){
-console.log(Sval.value)
+// console.log(Sval.value)
 }
 
 
@@ -109,13 +152,14 @@ su+=  `<div class="subjectMarks">
 
    <div>Subject Name:</div>
     <input type="text" id="subjectName${i}"  onchange="getSubId('subjectName${i}')">
-
+      
    <div>Total Marks:</div>
     <input type="text" id="totalmarks${i}" onchange="getSubId('totalmarks${i}')">
 
-    <Span id="error"></span>
+    
    <div>Obtained Marks:</div>
-    <input type="text" id="obtainedmarks${i}" onchange="getSubId('obtainedmarks${i}'),error()">
+    <input type="text" id="obtainedmarks${i}" onchange="getSubId('obtainedmarks${i}')">
+    <Span id="error">error: total marks must <br>be Greater than obtained marks</span>
 </div>
 </div>`
 
@@ -123,16 +167,18 @@ su+=  `<div class="subjectMarks">
 
 document.getElementById('sdetails').innerHTML=su;
 
-function error(){
- obttmarks=document.getElementById(`obtainedmarks${i}`).value;  
- totalMark=document.getElementById(`totalmarks${i}`).value;  
- console.log(obttmarks);
- console.log(totalMark)
+// function error(){
+//  obttmarks=document.getElementById(`obtainedmarks${i}`).value;  
+//  totalMark=document.getElementById(`totalmarks${i}`).value;  
+//  console.log(obttmarks);
+//  console.log(totalMark)
 
- if(obttmarks>totalMark){
-     document.getElementById('error').innerHTML="obtained marks must be less than total marks"
- }
-}
+//  if(obttmarks>totalMark){
+//      document.getElementById('error').innerHTML="obtained marks must be less than total marks"
+//  }
+// }
+
+
 }
 // function empty(){
 // if (su !=''){
@@ -141,18 +187,11 @@ function error(){
 // }
 
 
-
-
-function getSubId(id){
-
-let element =document.getElementById(id);
-element=element.id;
-console.log(element);
-var Stext=document.getElementById(element).value;
-localStorage.setItem(id,Stext)
-console.log(Stext);
-
+function clearlocalStorage(){
+    localStorage.clear();
 }
+
+
 
 
     </script>

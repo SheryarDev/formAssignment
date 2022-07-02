@@ -70,7 +70,22 @@
 
 
     //======================== Fetching Student personal details======================
-
+//     Gender1=document.getElementById("Male").checked;
+// Gender2=document.getElementById("female").checked;
+// console.log(Gender1)
+// console.log(Gender2)
+// if(Gender1==true)
+//     {
+//       let male=localStorage.getItem("Male");
+// document.getElementById('Sgender').innerHTML=male;
+// console.log(male);
+//     }
+//     else if(Gender2==true)
+//     {
+//       let female=localStorage.getItem("female");
+//       document.getElementById('Sgender').innerHTML=female;
+//       console.log(female);
+//     }
 // let ename=localStorage.getItem("name");
 // document.getElementById('Sname').innerHTML=ename;
 // console.log(ename);
@@ -107,3 +122,38 @@
 // document.getElementById('m1').innerHTML=mark1;
 // document.getElementById('o1').innerHTML=obtmark1;
 // console.log(ename);
+
+
+//=========================form validation====================
+
+//   function validateForm(){
+
+//     var name,fname,Gender,cno,institute,classs,Semester;
+    
+//     name=document.getElementById("name").value;
+//     fname=document.getElementById("fname").value;
+//      Gender=document.getElementById("Gender").value;
+//     cno=document.getElementById("cno").value;
+//     institute=document.getElementById("institute").value;
+//     classs=document.getElementsByName("Dender").value;
+//     Semester=document.getElementsByName("Semester;").value;
+
+
+//     if(first_name == "" || email== "" ||  budget ==0 || find_us==0 )
+//     {
+//         alert("Requried fields mustbe filled")
+//         return false;
+//     }
+//     else {
+//         if(Gender[0].checked==true || Gender[1].checked==true)
+//         {
+//             return true;
+//         }
+//         else
+//         {
+//             alert("you must select gender");
+//             return false;
+//         }
+//     }
+// }
+ 

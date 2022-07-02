@@ -22,7 +22,7 @@
                 <span id="Sfname"></span>
              </div>
              <div class="row">
-                <p><strong>Gender::</strong></p>
+                <p><strong>Gender:</strong></p>
                 <span id="Sgender"></span>
              </div>
              <div class="row">
@@ -118,6 +118,8 @@
 
     //======================== Fetching Student personal details======================
 
+
+
 let ename=localStorage.getItem("name");
 document.getElementById('Sname').innerHTML=ename;
 console.log(ename);
@@ -125,6 +127,14 @@ console.log(ename);
 let fname=localStorage.getItem("fname");
 document.getElementById('Sfname').innerHTML=fname;
 console.log(fname);
+
+let male=localStorage.getItem("Male");
+document.getElementById('Sgender').innerHTML=male;
+console.log(male);
+
+let female=localStorage.getItem("female");
+document.getElementById('Sgender').innerHTML=female;
+console.log(female);
 
 let cno=localStorage.getItem("cno");
 document.getElementById('Scontact').innerHTML=cno;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,194 +8,71 @@
     <link rel="stylesheet" href="form.css">
     <title>Form</title>
 </head>
+
 <body onload="clearlocalStorage()">
-    
 
     <div class="formContainer">
-         <fieldset>
-            <legend><strong><h1>Enter your details</h1></strong></legend>
-
-           
-       <form action="submitform.html" onsubmit="return validateForm()">
-           <div class="row">
-               <div>Name:</div>
-                <input type="text" id="name" name="name" onblur="getid('name')" >
-                <h1 id="textInput"></h1>
-           </div>
-           <div class="row">
-            <div>Father Name:</div>
-             <input type="text" id="fname"   onblur="getid('fname')">
-            </div>
-        <div class="row">
-            <div>Gender:</div>
-            <input type="radio" id="Male"  onblur="getid('Male')" name="Gender" value="Male">Male
-            <input type="radio" id="female"  onblur="getid('female')" name="Gender" value="female">Female
-             
-        </div>
-        <div class="row">
-            <div>Contact No#:</div>
-             <input type="text" id="cno" onblur="getid('cno')">
-        </div>
-        <div class="row">
-            <div>institute:</div>
-             <input type="text" id="institute" value="" onblur="getid('institute')">
-        </div>
-        <div class="row">
-            <div>Class:</div>
-             <input type="text" id="class" onblur="getid('class')">
-        </div>
-        <div class="row">
-            <div>Semester:</div>
-             <input type="text" id="Semester"  onblur="getid('Semester')">
-        </div>
-         <div class="row">
-             <div>Choose the No of subjects:</div>
-		 <select id="subjects">
-            <option value="0">1</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3" >3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            </select>
-        </div>
-          
-        <div id="sdetails"></div>
-
-        <div class="row">
-              <input type="submit">
-             <input type="reset">
-        </div>
-      
+        <fieldset>
+            <legend><strong>
+                    <h1>Enter your details</h1>
+                </strong></legend>
 
 
-       </form>
+            <form action="submitform.html" onsubmit="return validateForm()">
+                <div class="row">
+                    <div>Name:</div>
+                    <input type="text" id="name" name="name" onblur="getid('name')">
 
-    </fieldset>
+                </div>
+                <div class="row">
+                    <div>Father Name:</div>
+                    <input type="text" id="fname" onblur="getid('fname')">
+                </div>
+                <div class="row">
+                    <div>Email:</div>
+                    <input type="email" id="email" name="email" onblur="getid('email')">
+
+                </div>
+                <div class="row">
+                    <div>Contact No#:</div>
+                    <input type="text" id="cno" onblur="getid('cno')">
+                </div>
+                <div class="row">
+                    <div>institute:</div>
+                    <input type="text" id="institute" value="" onblur="getid('institute')">
+                </div>
+                <div class="row">
+                    <div>Class:</div>
+                    <input type="text" id="class" onblur="getid('class')">
+                </div>
+                <div class="row">
+                    <div>Semester:</div>
+                    <input type="text" id="Semester" onblur="getid('Semester')">
+                </div>
+                <div class="row">
+                    <div>Choose the No of subjects:</div>
+                    <select id="subjects">
+                        <option value="0">1</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+                <div id="sdetails"></div>
+
+                <div class="row">
+                    <input type="submit">
+                    <input type="reset">
+                </div>
+            </form>
+        </fieldset>
     </div>
-    <script>
 
-
-function validateForm(){
-var name,fname,Gender1,Gender2cno,institute,classs,Semester;
-
-name=document.getElementById("name").value;
-fname=document.getElementById("fname").value;
-cno=document.getElementById("cno").value;
-institute=document.getElementById("institute").value;
-classs=document.getElementById("class").value;
-Semester=document.getElementById("Semester").value;
-Gender1=document.getElementById("Male").checked;
-Gender2=document.getElementById("female").checked;
-
-console.log("form" + Gender1)
-console.log("form2" + Gender2)
-if(name == "" || fname== "" ||  cno =="" || institute=="" || classs=="" || Semester=="")
-{
-    alert("Requried fields mustbe filled")
-    return false;
-}
-else {
-    if(Gender1==true || Gender2==true)
-    {
-      
-        return true;
-    }
-    else
-    {
-        alert("you must select gender");
-        return false;
-    }
-}
-
-}
-
-function getid(id){
-let element =document.getElementById(id);
-element=element.id;
-// console.log(element);
-var text = document.getElementById(element).value;
-localStorage.setItem(id,text)
-}
-
-function getSubId(id){
-let element =document.getElementById(id);
-element=element.id;
-// console.log(element);
-var Stext=document.getElementById(element).value;
-localStorage.setItem(id,Stext)
-// console.log(Stext);
-}
-
-
-let Sval=document.getElementById("subjects");
-Sval.addEventListener('change',sub)
-Sval.addEventListener('change',addSub)
-//  Sval.addEventListener('',empty)
-function sub(){
-// console.log(Sval.value)
-}
-
-
-
-let su='';
-function addSub(){
-
-for(let i=0; i<Sval.value; i++){
-   // console.log(i)
-
-su+=  `<div class="subjectMarks">
-<div class="row">
-   <div>Subject NO:</div>
-    <div id="${i+1}">${i+1}</div>
-
-   <div>Subject Name:</div>
-    <input type="text" id="subjectName${i}"  onchange="getSubId('subjectName${i}')">
-      
-   <div>Total Marks:</div>
-    <input type="text" id="totalmarks${i}" onchange="getSubId('totalmarks${i}')">
-
-    
-   <div>Obtained Marks:</div>
-    <input type="text" id="obtainedmarks${i}" onchange="getSubId('obtainedmarks${i}')">
-    <Span id="error">error: total marks must <br>be Greater than obtained marks</span>
-</div>
-</div>`
-
-}
-
-document.getElementById('sdetails').innerHTML=su;
-
-// function error(){
-//  obttmarks=document.getElementById(`obtainedmarks${i}`).value;  
-//  totalMark=document.getElementById(`totalmarks${i}`).value;  
-//  console.log(obttmarks);
-//  console.log(totalMark)
-
-//  if(obttmarks>totalMark){
-//      document.getElementById('error').innerHTML="obtained marks must be less than total marks"
-//  }
-// }
-
-
-}
-// function empty(){
-// if (su !=''){
-//     document.getElementById('sdetails').innerHTML='';
-//     console.log("empty")
-// }
-
-
-function clearlocalStorage(){
-    localStorage.clear();
-}
-
-
-
-
-    </script>
     <script src="form.js"></script>
 </body>
+
 </html>

@@ -57,7 +57,7 @@ input[type="radio"]{
 table ,tr,td ,th{
     width: 1200px;
     border: 2px solid black;
-    padding: 8px;
+    padding: 5px;
    text-align: center;
    font-size: 20px;
 }

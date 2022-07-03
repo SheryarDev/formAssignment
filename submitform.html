@@ -8,47 +8,42 @@
     
     <title>Document</title>
 </head>
-<body>
+
+<body onload="fetchStudentId('name'),fetchStudentId('fname'),fetchStudentId('email'),fetchStudentId('cno'),fetchStudentId('institute'),fetchStudentId('class'),fetchStudentId('Semester'),fetchStudetnSubDetail()">
     
     <div class="container">
          <h1>Student Record</h1>
          <div class="record">
              <div class="row">
-                <p><strong>Name:</strong></p>
-                <span id="Sname"></span>
+                <p><strong >Name:</strong></p>
+                <span id="name" ></span>
              </div>
              <div class="row">
                 <p><strong>Father Name:</strong></p>
-                <span id="Sfname"></span>
+                <span id="fname"></span>
              </div>
              <div class="row">
-                <p><strong>Gender:</strong></p>
-                <span id="Sgender"></span>
+                <p><strong>Email:</strong></p>
+                <span id="email"></span>
              </div>
              <div class="row">
                 <p><strong>Contact No#:</strong></p>
-                <span id="Scontact"></span>
+                <span id="cno"></span>
              </div>
              <div class="row">
                 <p><strong>institute:</strong></p>
-                <span id="Sinstitute"></span>
+                <span id="institute"></span>
              </div>
              <div class="row">
                 <p><strong>Classs:</strong></p>
-                <span id="Sclass"></span>
+                <span id="class"></span>
              </div>
-             <div class="row">
+             <div class="row" >
                 <p><strong>Semester:</strong></p>
-                <span id="Ssemester"></span>
-             </div>
-             
-
-
-             
+                <span id="Semester"></span>
+             </div>          
          </div>
 
-         <!-- <h1 class="textInput"></h1> -->
-         <!-- <h1 id="fInput">sdfs</h1> -->
         <table>
             <thead>
                 <th>Sr.NO</th>
@@ -59,163 +54,51 @@
 
             <tbody>
                      <tr>
-                         <td>0</td>
-                         <td id="s0">linear Algebra</td>
-                         <td id="m0">100</td>
-                         <td id="o0">75</td>
-                     </tr>
-                     <tr>
                          <td>1</td>
-                         <td id="s1">linear Algebra</td>
-                         <td id="m1">100</td>
-                         <td id="o1">75</td>
+                         <td id="s0"></td>
+                         <td id="m0"></td>
+                         <td id="o0"></td>
                      </tr>
                      <tr>
-                        <td>2</td>
-                        <td id="s2">linear Algebra</td>
-                        <td id="m2">100</td>
-                        <td id="o2">75</td>
+                         <td>2</td>
+                         <td id="s1"></td>
+                         <td id="m1"></td>
+                         <td id="o1"></td>
                      </tr>
                      <tr>
                         <td>3</td>
-                        <td id="s3">linear Algebra</td>
-                        <td id="m3">100</td>
-                        <td id="o3">75</td>
+                        <td id="s2"></td>
+                        <td id="m2"></td>
+                        <td id="o2"></td>
                      </tr>
                      <tr>
                         <td>4</td>
-                        <td id="s4">linear Algebra</td>
-                        <td id="m4">100</td>
-                        <td id="o4">75</td>
+                        <td id="s3"></td>
+                        <td id="m3"></td>
+                        <td id="o3"></td>
                      </tr>
                      <tr>
                         <td>5</td>
-                        <td id="s5">linear Algebra</td>
-                        <td id="m5">100</td>
-                        <td id="o5">75</td>
+                        <td id="s4"></td>
+                        <td id="m4"></td>
+                        <td id="o4"></td>
                      </tr>
                      <tr>
                         <td>6</td>
-                        <td id="s6">linear Algebra</td>
-                        <td id="m6">100</td>
-                        <td id="o6">75</td>
+                        <td id="s5"></td>
+                        <td id="m5"></td>
+                        <td id="o5"></td>
                      </tr>
                      <tr>
                         <td>7</td>
-                        <td id="s7">linear Algebra</td>
-                        <td id="m7">100</td>
-                        <td id="o7">75</td>
+                        <td id="s6"></td>
+                        <td id="m6"></td>
+                        <td id="o6"></td>
                      </tr>
-
-
-
             </tbody>
         </table>
     </div>
 </body>
-<script>
-    
 
-    //======================== Fetching Student personal details======================
-
-
-
-let ename=localStorage.getItem("name");
-document.getElementById('Sname').innerHTML=ename;
-console.log(ename);
-
-let fname=localStorage.getItem("fname");
-document.getElementById('Sfname').innerHTML=fname;
-console.log(fname);
-
-let male=localStorage.getItem("Male");
-document.getElementById('Sgender').innerHTML=male;
-console.log(male);
-
-let female=localStorage.getItem("female");
-document.getElementById('Sgender').innerHTML=female;
-console.log(female);
-
-let cno=localStorage.getItem("cno");
-document.getElementById('Scontact').innerHTML=cno;
-console.log(cno);
-
-let institute=localStorage.getItem("institute");
-document.getElementById('Sinstitute').innerHTML=institute;
-console.log(institute);
-
-
-let classs=localStorage.getItem("class");
-document.getElementById('Sclass').innerHTML=classs;
-console.log(classs);
-
-let semeseter=localStorage.getItem("Semester");
-document.getElementById('Ssemester').innerHTML=semeseter;
-console.log(semeseter);
-
-// let name=localStorage.getItem("name");
-
-  //======================== Fetching Student subject details======================
-
-  let sub0=localStorage.getItem("subjectName0");
-  let mark0=localStorage.getItem("totalmarks0")
-  let obtmark0=localStorage.getItem('obtainedmarks0');
-document.getElementById('s0').innerHTML=sub0;
-document.getElementById('m0').innerHTML=mark0;
-document.getElementById('o0').innerHTML=obtmark0;
-
-  let sub1=localStorage.getItem("subjectName1");
-  let mark1=localStorage.getItem("totalmarks1")
-  let obtmark1=localStorage.getItem('obtainedmarks1');
-document.getElementById('s1').innerHTML=sub1;
-document.getElementById('m1').innerHTML=mark1;
-document.getElementById('o1').innerHTML=obtmark1;
-
-  let sub2=localStorage.getItem("subjectName2");
-  let mark2=localStorage.getItem("totalmarks2")
-  let obtmark2=localStorage.getItem('obtainedmarks2');
-document.getElementById('s2').innerHTML=sub2;
-document.getElementById('m2').innerHTML=mark2;
-document.getElementById('o2').innerHTML=obtmark2;
-
-  let sub3=localStorage.getItem("subjectName3");
-  let mark3=localStorage.getItem("totalmarks3")
-  let obtmark3=localStorage.getItem('obtainedmarks3');
-document.getElementById('s3').innerHTML=sub3;
-document.getElementById('m3').innerHTML=mark3;
-document.getElementById('o3').innerHTML=obtmark3;
-
-  let sub4=localStorage.getItem("subjectName4");
-  let mark4=localStorage.getItem("totalmarks4")
-  let obtmark4=localStorage.getItem('obtainedmarks4');
-document.getElementById('s4').innerHTML=sub4;
-document.getElementById('m4').innerHTML=mark4;
-document.getElementById('o4').innerHTML=obtmark4;
-
-  let sub5=localStorage.getItem("subjectName5");
-  let mark5=localStorage.getItem("totalmarks5")
-  let obtmark5=localStorage.getItem('obtainedmarks5');
-document.getElementById('s5').innerHTML=sub5;
-document.getElementById('m5').innerHTML=mark5;
-document.getElementById('o5').innerHTML=obtmark5;
-
-  let sub6=localStorage.getItem("subjectName6");
-  let mark6=localStorage.getItem("totalmarks6")
-  let obtmark6=localStorage.getItem('obtainedmarks6');
-document.getElementById('s6').innerHTML=sub6;
-document.getElementById('m6').innerHTML=mark6;
-document.getElementById('o6').innerHTML=obtmark6;
-
-  let sub7=localStorage.getItem("subjectName7");
-  let mark7=localStorage.getItem("totalmarks7")
-  let obtmark7=localStorage.getItem('obtainedmarks7');
-document.getElementById('s7').innerHTML=sub7;
-document.getElementById('m7').innerHTML=mark7;
-document.getElementById('o7').innerHTML=obtmark7;
-
-
-
-
-</script>
 <script src="form.js"></script>
 </html>

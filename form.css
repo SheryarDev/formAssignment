@@ -65,7 +65,7 @@ table th{
     background-color: crimson;
     color: wheat;
 }
-#error{
+.error{
     font-size: 20px;
     color:red;
 }

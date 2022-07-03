@@ -1,3 +1,7 @@
+// number =parseInt('45.665');//pareFloat ignore the number after the decimal
+// console.log(number.toFixed(6),(typeof number));
+// let stri=Number('45544');
+//  console.log(stri,(typeof stri))
 
 //======================storing student perosonall detail on local storage=====================
   function getid(id){
@@ -21,11 +25,11 @@
   
   //=========================Adding student subjects====================================
   let Sval=document.getElementById("subjects");
-  Sval.addEventListener('change',sub)
   Sval.addEventListener('change',addSub)
-  function sub(){
-  // console.log(Sval.value)
-  }
+  // Sval.addEventListener('change',sub)
+  // function sub(){
+  // //console.log(Sval.value)
+  // }
   
   let su='';
   function addSub(){
@@ -47,29 +51,36 @@
       
      <div>Obtained Marks:</div>
       <input type="text" id="obtainedmarks${i}" onchange="getSubId('obtainedmarks${i}')">
-      <Span id="error">error: total marks must <br>be Greater than obtained marks</span>
+      <Span id="error${i}" class="error"></span>
   </div>
   </div>`
   
-  }
-  
-  document.getElementById('sdetails').innerHTML=su;
-  
-  // function error(){
-  //  obttmarks=document.getElementById(`obtainedmarks${i}`).value;  
-  //  totalMark=document.getElementById(`totalmarks${i}`).value;  
-  //  console.log(obttmarks);
-  //  console.log(totalMark)
-  
-  //  if(obttmarks>totalMark){
-  //      document.getElementById('error').innerHTML="obtained marks must be less than total marks"
-  //  }
-  // }
-  
-  
+
   }
 
+  document.getElementById('sdetails').innerHTML=su;
+
+}
   
+//=================================throw error if obtained marks is less than total marks=====================
+  let  error=function(){
+         for(let i=0; i<Sval.value; i++){
+         //  totalMark=Number(document.getElementById(`totalmarks${i}`).value);
+    //       console.log( totalMark,typeof(totalMark));
+    //    obttmarks=Number(document.getElementById(`obtainedmarks${i}`).value); 
+    //   console.log(obttmarks ,typeof(totalMark))
+      
+      if(Number(document.getElementById(`totalmarks${i}`).value)< Number(document.getElementById(`obtainedmarks${i}`).value))
+      {
+        console.log("hello")
+        document.getElementById(`error${i}`).innerHTML="error: total marks must <br>be Greater than obtained marks"
+      }else{
+        document.getElementById(`error${i}`).innerHTML=""
+      }
+    }
+   
+}
+
   //===========================Clearing previous store data on local storage======================================
   function clearlocalStorage(){
       localStorage.clear();
@@ -170,26 +181,28 @@ document.getElementById('o7').innerHTML=obtmark7;
   }
 //=========================form validation====================
 function validateForm(){
-  var name,fname,email,cno,institute,classs,Semester;
+ 
+  // var name,fname,email,cno,institute,classs,Semester;
   
-  name=document.getElementById("name").value;
-  fname=document.getElementById("fname").value;
-  cno=document.getElementById("cno").value;
-  institute=document.getElementById("institute").value;
-  classs=document.getElementById("class").value;
-  Semester=document.getElementById("Semester").value;
-  email=document.getElementById("email").value
+  // name=document.getElementById("name").value;
+  // fname=document.getElementById("fname").value;
+  // cno=document.getElementById("cno").value;
+  // institute=document.getElementById("institute").value;
+  // classs=document.getElementById("class").value;
+  // Semester=document.getElementById("Semester").value;
+  // email=document.getElementById("email").value
 
   
-  if(name == "" || fname== "" ||  cno =="" || institute=="" || classs=="" || Semester=="" || email=="")
-  {
-      alert("Requried fields mustbe filled")
-      return false;
-  }
-  else {
+  // if(name == "" || fname== "" ||  cno =="" || institute=="" || classs=="" || Semester=="" || email=="")
+  // {
+  //     alert("Requried fields mustbe filled")
+  //     return false;
+  // }
+  // else {
      
-   return true;
+  //  return true;
 
   
-  }
+  // }
+
 }

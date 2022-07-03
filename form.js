@@ -1,8 +1,3 @@
-// number =parseInt('45.665');//pareFloat ignore the number after the decimal
-// console.log(number.toFixed(6),(typeof number));
-// let stri=Number('45544');
-//  console.log(stri,(typeof stri))
-
 //======================storing student perosonall detail on local storage=====================
   function getid(id){
   let element =document.getElementById(id);
@@ -21,21 +16,27 @@
   localStorage.setItem(id,Stext)
   // console.log(Stext);
   }
-  
-  
+    
   //=========================Adding student subjects====================================
   let Sval=document.getElementById("subjects");
   Sval.addEventListener('change',addSub)
+  Sval.addEventListener('mouseenter',remSub)
   // Sval.addEventListener('change',sub)
   // function sub(){
   // //console.log(Sval.value)
   // }
-  
+  function remSub(){
+    document.getElementById('sdetails').innerHTML="";
+    console.log("clear")
+    Sval.value=0;
+    su='';
+  }
+
   let su='';
   function addSub(){
-  
+  console.log("addsub")
   for(let i=0; i<Sval.value; i++){
-     // console.log(i)
+     console.log(i)
   
   su+=  `<div class="subjectMarks">
   <div class="row">
@@ -57,7 +58,7 @@
   
 
   }
-
+console.log("riten")
   document.getElementById('sdetails').innerHTML=su;
 
 }
@@ -73,9 +74,11 @@
       if(Number(document.getElementById(`totalmarks${i}`).value)< Number(document.getElementById(`obtainedmarks${i}`).value))
       {
         console.log("hello")
-        document.getElementById(`error${i}`).innerHTML="error: total marks must <br>be Greater than obtained marks"
+          document.getElementById(`error${i}`).innerHTML="error: total marks must <br>be Greater than obtained marks";
+          // return false;
       }else{
         document.getElementById(`error${i}`).innerHTML=""
+       // return true;
       }
     }
    
@@ -182,27 +185,27 @@ document.getElementById('o7').innerHTML=obtmark7;
 //=========================form validation====================
 function validateForm(){
  
-  // var name,fname,email,cno,institute,classs,Semester;
+  var name,fname,email,cno,institute,classs,Semester;
   
-  // name=document.getElementById("name").value;
-  // fname=document.getElementById("fname").value;
-  // cno=document.getElementById("cno").value;
-  // institute=document.getElementById("institute").value;
-  // classs=document.getElementById("class").value;
-  // Semester=document.getElementById("Semester").value;
-  // email=document.getElementById("email").value
+  name=document.getElementById("name").value;
+  fname=document.getElementById("fname").value;
+  cno=document.getElementById("cno").value;
+  institute=document.getElementById("institute").value;
+  classs=document.getElementById("class").value;
+  Semester=document.getElementById("Semester").value;
+  email=document.getElementById("email").value
 
   
-  // if(name == "" || fname== "" ||  cno =="" || institute=="" || classs=="" || Semester=="" || email=="")
-  // {
-  //     alert("Requried fields mustbe filled")
-  //     return false;
-  // }
-  // else {
+  if(name == "" || fname== "" ||  cno =="" || institute=="" || classs=="" || Semester=="" || email=="")
+  {
+      alert("Requried fields mustbe filled")
+      return false;
+  }
+  else {
      
-  //  return true;
+   return true;
 
   
-  // }
+  }
 
 }
